@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -15,13 +15,13 @@
 </head>
 
 <body class="main-bg">
-    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Close menu" role="button">
-    <label class="close-menu-label" for="close-menu" title="close menu"></label>
-    <aside class="menu white-bg">
-        <div class="main-content menu-content">
+    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Menu de navegação" aria-controls="site-menu">
+    <label class="close-menu-label" for="close-menu"></label>
+    <header id="site-menu" class="menu white-bg">
+        <div class="main-content menu-content" onclick="if (event.target.closest('a')) document.getElementById('close-menu').checked = false;">
             <h1><a href="#intro">O que eu mais gosto em Manaus</a></h1>
             <nav>
-                <ul onclick="getElementById('close-menu').checked = false;">
+                <ul>
                     <li><a href="#manaus">intro</a></li>
                     <li><a href="#grid-manaus">lugares</a></li>
                     <li><a href="#gallery">fotos</a></li>
@@ -30,11 +30,12 @@
                 </ul>
             </nav>
         </div>
-    </aside>
+    </header>
 
     <div class="menu-spacing"></div>
 
-    <section id="intro" class="intro main-bg section">
+    <main>
+    <section tabindex="-1" id="intro" class="intro main-bg section">
         <div class="main-content intro-content">
             <div class="intro-text-content">
                 <h2> Site projeto Desenvolvimento Web </h2>
@@ -51,7 +52,7 @@
 
     </section>
 
-    <section id="manaus" class="white-bg section">
+    <section tabindex="-1" id="manaus" class="white-bg section">
         <div class="main-content manaus-intro">
             <h2>Introdução</h2>
             <p>Neste site vou buscar contar os lugares que eu mais gosto em Manaus, apresentando todos os pontos
@@ -63,7 +64,7 @@
         </div>
     </section>
 
-    <section id="grid-manaus" class="grid-manaus main-bg section">
+    <section tabindex="-1" id="grid-manaus" class="grid-manaus main-bg section">
         <div class="main-content grid-manaus-content">
             <h2>3 lugares para visitar</h2>
             <div class="grid">
@@ -96,7 +97,7 @@
         </div>
     </section>
 
-    <section id="gallery" class="grid-manaus white-bg section">
+    <section tabindex="-1" id="gallery" class="grid-manaus white-bg section">
         <div class="main-content grid-manaus-content">
             <h2>Fotos</h2>
             <p> Fotos dos lugares mencionados </p>
@@ -108,36 +109,35 @@
             <div class="grid">
 
                 <div class="gallery-img">
-                    <img src="./imagem/manauara360x360 1.jpg" alt="Manauara1">
+                    <img src="./imagem/manauara360x360 1.jpg" alt="Shopping Manauara — foto 1" width="360" height="360" loading="lazy">
                 </div>
 
                 <div class="gallery-img">
-                    <img src="./imagem/pontanegra360x360 1.jpg" alt="Pontanegra1">
+                    <img src="./imagem/pontanegra360x360 1.jpg" alt="Ponta Negra — foto 1" width="360" height="360" loading="lazy">
                 </div>
 
                 <div class="gallery-img">
-                    <img src="./imagem/centro360x360 1.jpg" alt="Centro1">
+                    <img src="./imagem/centro360x360 1.jpg" alt="Centro de Manaus — foto 1" width="360" height="360" loading="lazy">
                 </div>
 
                 <div class="gallery-img">
-                    <img src="./imagem/manauara360x360 2.jpg" alt="Manauara2">
+                    <img src="./imagem/manauara360x360 2.jpg" alt="Shopping Manauara — foto 2" width="360" height="360" loading="lazy">
                 </div>
 
                 <div class="gallery-img">
-                    <img src="./imagem/pontanegra360x360 2.jpg" alt="Pontanegra2">
+                    <img src="./imagem/pontanegra360x360 2.jpg" alt="Ponta Negra — foto 2" width="360" height="360" loading="lazy">
                 </div>
 
                 <div class="gallery-img">
-                    <img src="./imagem/centro360x360 2.jpg" alt="Centro2">
+                    <img src="./imagem/centro360x360 2.jpg" alt="Centro de Manaus — foto 2" width="360" height="360" loading="lazy">
                 </div>
 
 
             </div>
         </div>
-        </div>
     </section>
 
-    <section id="outros" class="white-bg section">
+    <section tabindex="-1" id="outros" class="white-bg section">
         <div class="main-content manaus-intro">
             <h2>Outros locais</h2>
             <p>Manaus possui também vários outros locais, é uma cidade muito grande e também uma das mais populosas
@@ -153,28 +153,27 @@
         </div>
     </section>
 
-    <section id="video" class="main-bg section">
+    <section tabindex="-1" id="video" class="main-bg section">
 
         <div class="tituloSectionVideo">
             <h3> Música preferida</h3>
         </div>
         <div class="video">
-            
-            <iframe src="https://www.youtube.com/embed/xjolj9p1AN0?controls=1">
-
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/xjolj9p1AN0?controls=1" title="Música preferida" loading="lazy" allowfullscreen></iframe>
         </div>
 
     </section>
 
+    </main>
+
     <footer id="footer" class="footer white-bg">
-        <a rel="nofollow" target="_blank" href="http://www2.ifam.edu.br"><img src="./imagem/ifam.png"
-                alt="ifam"></img></a>
+        <a rel="nofollow noopener" target="_blank" href="http://www2.ifam.edu.br"><img src="./imagem/ifam.png"
+                alt="Instituto Federal do Amazonas"></a>
         <p>Feito por Nivaldo Dantas</p>
 
     </footer>
 
-    <a class="back-to-top" href="#">➤</a>
+    <a class="back-to-top" href="#intro" aria-label="Voltar ao início">➤</a>
 </body>
 
 </html>
